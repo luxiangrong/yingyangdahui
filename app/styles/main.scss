@@ -317,9 +317,23 @@ body {
             }
         }
     }
+    .nav-pills {
+        text-align: center;
+        > li {
+            margin-left: -3px;
+            margin-right: -3px;
+        }
+        > li > a {
+            border-radius: 0px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        
+    }
 }
 
 article {
+    margin-bottom: 30px;
     h2.title {
         margin-top: 0px;
         height: 40px;
@@ -330,14 +344,53 @@ article {
         color: #fff;
         line-height: 40px;
     }
+    h3.title {
+        @include gradient-horizontal(#004ea2, #00afec);
+        line-height: 35px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        padding-left: 1em;
+        margin-top: 0px;
+    }
+    h4.title {
+        color: #0074C1;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .sect {
+        margin-bottom: 30px;
+        line-height: 2;
+        h4 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
     .body {
         padding: 20px 30px;
         background: url(../images/p37.png) repeat-y center top;
         p {
             text-indent: 2em;
+            line-height: 1.8;
             &.no-intent {
                 text-indent: 0em;
             }
+        }
+    }
+    &.full {
+        h2.title {
+            background: url(../images/p40.png) no-repeat left center;
+            .back {
+                margin-top: 8px;
+                margin-right: 8px;
+                &:hover {
+                    @include opacity(0.8);
+                }
+            }
+        }
+        .body {
+            padding: 20px 30px;
+            background: url(../images/p41.png) repeat-y center top;
         }
     }
     .more {
@@ -354,6 +407,193 @@ article {
             text-align: center;
             font-weight: bold;
             margin-top: 10px;
+            margin-bottom: 0px;
         }
+    }
+    .content-group {
+        margin-bottom: 20px;
+        h5 {
+            font-weight: bold;
+        }
+    }
+    &.org {
+        h5 {
+            font-weight: bold;
+        }
+        dl.dl-horizontal {
+            dt {
+                width: 6em;
+                float: left;
+                clear: left;
+                text-align: right;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            dd {
+                margin-left: 7em;
+            }
+        }
+    }
+    &.intro {
+        .row {
+            margin-bottom: 50px;
+        }
+    }
+    &.form {
+        .label-wrap {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            label {
+                font-size: 16px;
+                margin-right: 5px;
+            }
+        }
+        .form-horizontal {
+            padding-left: 20px;
+            border-left: 1px solid #004ea2;
+            label {
+                padding-right: 8px;
+                color: #595757;
+                font-weight: normal;
+            }
+            input {
+                border-color: #004ea2;
+            }
+            h5 {
+                font-size: 14px;
+                font-weight: bold;
+                color: #595757;
+            }
+            a {
+                color: #595757;
+            }
+        }
+    }
+    .register {
+        h1 {
+            background: url(../images/p43.png) no-repeat center center;
+            padding-left: 20px;
+            font-size: 18px;
+            small {
+                font-size: 14px;
+            }
+        }
+        label {
+            padding-right: 5px;
+            font-weight: normal;
+        }
+        .form-control {
+            background: transparent;
+            border-color: #595757;
+        }
+    }
+    .self-info {
+        color: #595757;
+        h1 {
+            background: url(../images/p44.png) no-repeat center center;
+            padding-left: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #595757;
+        }
+        h3 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #00A0E8;
+        }
+        h4 {
+            background: url(../images/p45.png) no-repeat center center;
+            padding-left: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .pay-method {
+        padding-left: 30px;
+    }
+}
+
+.btn-a {
+    @include button-variant(#fff, #fc7502, #ffffff);
+    @include gradient-vertical(#00b0ec, #004ea2);
+    &:hover {
+        @include gradient-vertical(lighten(#00b0ec, 16%), lighten(#004ea2, 16%));
+    }
+}
+
+.btn-b {
+    @include button-variant(#fff, transparent, #0060af);
+    color: #595757;
+    &:hover {
+        color: darken(#595757, 20%);
+    }
+}
+
+.sub-nav {
+    @include gradient-horizontal(#0150a3, #00aeeb);
+    height: 40px;
+    line-height: 50px;
+    padding-left: 20px;
+    overflow:visiable;
+    .back {
+        margin-top: -5px;
+        margin-right: 8px;
+    }
+    .split {
+        width: 0px;
+        border-left: 1px solid #fff;
+        padding-right: 1px solid #fff;
+        display: block;
+        margin-top: 5px;
+        height: 30px;
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+
+    }
+    a.nav-item {
+        color: #fff;
+        display: block;
+        height: 50px;
+        float: left;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: -5px;
+        &.active,
+        &:hover {
+            @include gradient-horizontal(#0076c0, #00afec);
+        }
+    }
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
+.attach_download {
+    @include gradient-vertical(#00b0ec, #004ea2);
+    clear:both;
+    display: block;
+    float: left;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 1px 10px 3px 3px;
+    width: 200px;
+    border-radius: 5px;
+    vertical-align: middle;
+    img {
+        margin-right: 5px;
+        margin-top: -1px;
+    }
+    &:hover {
+        text-decoration: none;
+        color: darken(#fff, 15%);
     }
 }
